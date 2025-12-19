@@ -1,39 +1,35 @@
-
+// Приветствие
 let name = prompt('Как вас зовут?')
-alert('Здраствуйте, ' + name)
+alert('Здравствуйте, ' + name)
 
+// Игра "Угадай число"
+let secretNumber = Math.floor(Math.random() * 15) + 1
+let guess
+let attempts = 0
 
-let secretNumber= Math/floor(Math.random() * 15) +1
-let quess;
-let attemps = 0;
+while (guess !== secretNumber) {
+guess = Number(prompt('Угадай число от 1 до 15'))
+attempts++
 
-while(quess != secretNumber){
-quess = prompt('Угадай число от 1 до 15')
-quess = Number(quess);
-prompt('Угадай число от 1 до 15')
-
-
-attemps++;
-
-if(quess < secretNumber){
+if (guess < secretNumber) {
 alert('Попробуй число побольше')
-}else if(quess > secretNumber){
+} else if (guess > secretNumber) {
 alert('Попробуй число поменьше')
 }
 }
-alert('Молодец, вы угадали число!' + secretNumber + 'за' + attemps + 'попыток')
 
+alert('Молодец! Ты угадал число ' + secretNumber + ' за ' + attempts + ' попыток')
 
+// Переключение темы
 document.addEventListener('DOMContentLoaded', function () {
-let box = document.getElementById('colorBox')
-let redButton = document.getElementById('redBtn')
-let greenbutton = document.getElementById('greenBtn')
+let darkBtn = document.getElementById('darkBtn')
+let lightBtn = document.getElementById('lightBtn')
 
-
-redButton.addEventListener('click', function(){
-    box1.style.backgroundColor = 'red'
+darkBtn.addEventListener('click', function () {
+document.body.classList.add('dark-theme')
 })
 
-
-console.log(greenbutton)
+lightBtn.addEventListener('click', function () {
+document.body.classList.remove('dark-theme')
+})
 })
